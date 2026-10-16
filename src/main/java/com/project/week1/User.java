@@ -1,4 +1,4 @@
-package com.project.models;
+package com.project.week1;
 
 import java.util.Objects;
 
@@ -33,11 +33,6 @@ public class User {
         User user = (User) o;
         return age == user.age && Objects.equals(name, user.name);
     }
-
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(name, age);
-//    }
 
     public int hashCode() {
         return Objects.hash(name, age);
