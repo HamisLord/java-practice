@@ -1,26 +1,36 @@
 package com.project.week1.generics;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
-public class Box<T> {
-    T box = null;
+public class Box<T extends Number> {
+    private T item = null;
 
     public T get() {
-        if (box != null) {
-            T result = box;
-            box = null;
+        if (item != null) {
+            T result = item;
+            item = null;
             return result;
         }
         return null;
     }
 
-    public void put(T type) {
-        if (box != null) {
+    public void fillWithInts(List<? super Integer> list) {
+        for (int i = 1; i <= 5; i++) {
+            list.add(i);
+        }
+    }
+
+    public double doubleValue() {
+        return  2.0;
+    }
+
+    public void put(T addingItem) {
+        if (item != null) {
             System.out.println("в ящике что-то есть, нельзя ничего положить");
         }else {
-            box = type;
-            System.out.println("в ящик было положено: " + type);
+            item = addingItem;
+            System.out.println("в ящик было положено: " + addingItem);
         }
 
     }
