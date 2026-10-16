@@ -15,14 +15,17 @@ public class Box<T extends Number> {
         return null;
     }
 
-    public void fillWithInts(List<? super Integer> list) {
-        for (int i = 1; i <= 5; i++) {
-            list.add(i);
-        }
-    }
 
-    public double doubleValue() {
-        return  2.0;
+
+
+
+    public double getDoubleValue() {
+        if (item != null) {
+            double result = item.doubleValue();
+            item = null;
+            return result;
+        }
+        return -1.0;
     }
 
     public void put(T addingItem) {
