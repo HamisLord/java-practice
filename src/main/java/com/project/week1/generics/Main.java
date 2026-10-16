@@ -22,5 +22,10 @@ public class Main {
         for (int num : list) {
             System.out.print(num + " ");
         }
+        System.out.println();
+
+        List<String> s = new ArrayList<>();
+        List<Integer> i = new ArrayList<>();
+        System.out.println(s.getClass() == i.getClass());
     }
 }
